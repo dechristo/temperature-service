@@ -5,7 +5,9 @@ public class TemperatureSensorDataGenerator {
         int lowerBound = 24;
         int upperBound = 36;
         Random r = new Random();
-        double random = lowerBound + r.nextDouble() * (upperBound - lowerBound);
-        return random;
+        double randomTemperatureReading = lowerBound + r.nextDouble() * (upperBound - lowerBound);
+        String randomReadingAsString = String.format("%2.2f", randomTemperatureReading);
+
+        return Double.valueOf(randomReadingAsString);
     }
 }
