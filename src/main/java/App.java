@@ -10,7 +10,7 @@ public class App {
     private Logger logger;
     private TemperatureSensorProducer temperatureSensorProducer;
     private final static String PULSAR_URL = "pulsar://localhost:6650";
-    private final static String TEMPERATURE_SENSOR_TOPIC = "temperature-sensor-1a";
+    private final static String TEMPERATURE_SENSOR_TOPIC = "temperature-sensor-event";
 
 
     public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class App {
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                     TemperatureSensor data = new TemperatureSensor(
-                        "sensor-1a",
+                        TemperatureSensorDataGenerator.generateSensorName(),
                         TemperatureSensorDataGenerator.generateTemperatureData()
                     );
                     logger.info(String.format("%s : sensor=[%s], value=[%s]", new Date(data.getDatetime()), data.getName(), data.getValue()));
