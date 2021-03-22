@@ -1,12 +1,7 @@
 import java.util.Random;
+import utils.SensorNames;
 
 public class TemperatureSensorDataGenerator {
-    private static String[] sensorNames = new String[] {
-        "temperature-1b",
-        "temperature-200f",
-        "temperature-2m",
-        "temperature-400fl"
-    };
     public static double generateTemperatureData() {
         int lowerBound = 24;
         int upperBound = 36;
@@ -22,6 +17,6 @@ public class TemperatureSensorDataGenerator {
         int upperBound = 3;
         Random r = new Random();
         double randomSensorNameIndex = lowerBound + r.nextDouble() * (upperBound - lowerBound);
-        return sensorNames[(int) Math.round(randomSensorNameIndex)];
+        return SensorNames.getSensorNames().get((int) Math.round(randomSensorNameIndex));
     }
 }
