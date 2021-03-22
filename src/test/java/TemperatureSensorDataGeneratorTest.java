@@ -1,6 +1,7 @@
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 import utils.SensorNames;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TemperatureSensorDataGeneratorTest {
 
